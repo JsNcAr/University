@@ -7,7 +7,7 @@
 import numpy as np
 
 
-# In[4]:
+# In[2]:
 
 
 E11 = np.array( [0.5, 1, 1.4, 1.74] )
@@ -18,10 +18,37 @@ E15 = np.array([0.2, 0.32, 0.47, 0.67, 0.87])
 
 I4 = np.linspace( 1, 4, num = 4 )
 I5 = np.linspace( 1, 5, num = 5 )
+C3 = np.linspace(2,4, num =3)
+T = np.linspace(-1,2, num = 3)
+D = np.linspace(-1,1, num = 2)
 
 
 # In[3]:
 
 
+E21 = np.array([0.498, 0.618, 0.718])
+E22 = np.array([0.45, 0.55, 0.65])
+E23 = np.array([0.5, 0.7, 0.9])
+E24 = np.array([0.63, 0.83, 1.04])
+E25 = np.array([0.87, 1.18, 1.48])
+E26 = np.array([1.13, 1.45, 1.74])
+E27 = np.array([0.6, 0.4, 0.4])
+E28 = np.array([1.25, 1.7, 2.19])
+E29 = np.array([1.2, 1.65, 2.05])
+E2d = np.array([2.2, 3.15, 4.05])
 
+
+# In[4]:
+
+
+E31= np.array([-22, 20, 56])
+E32= np.array([-26,24])
+E33= np.array([-32, 29])
+E34= np.array([-40, 37])
+E35= np.array([-45,42])
+E36= np.array([-51, 55])
+E37= np.array([-63, 61])
+E38= np.array([-75, 70])
+E39= np.array([-88, 84])
+E3d= np.array([-101, 107])
 
