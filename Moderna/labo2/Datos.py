@@ -18,7 +18,7 @@ E15 = np.array([0.2, 0.32, 0.47, 0.67, 0.87])
 
 I4 = np.linspace( 1, 4, num = 4 )
 I5 = np.linspace( 1, 5, num = 5 )
-C3 = np.linspace(2,4, num =3)
+I3 = np.linspace(1,3, num =3)
 T = np.linspace(-1,2, num = 3)
 D = np.linspace(-1,1, num = 2)
 
@@ -51,4 +51,7 @@ E37= np.array([-63, 61])
 E38= np.array([-75, 70])
 E39= np.array([-88, 84])
 E3d= np.array([-101, 107])
+
+D2 = np.array([0.274, 0.337, 0.377, 0.457, 0.524, 0.581, 0.639, 0.703, 0.80, 2.533])
+D3 = np.array([0.52, 0.63, 0.72, 0.8, 1.03, 1.21, 1.35, 1.58, 1.91, 2.25])
 
