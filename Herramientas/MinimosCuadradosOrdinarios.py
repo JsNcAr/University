@@ -50,3 +50,35 @@ def MinCua(a,b):
 
 
 #  <font color ='gray'> Finalmente el metodo nos retorna un array con 5 parametros, el primero representa el intercepto de la recta solucion, el segundo la pendiente, el tercero es el array dado como parametro 'a' (representando la variable independiente) convertido a numpy, el cuarto es este mismo array pero en forma de matriz con una columna de 1's representando el parametro independiente, y el quinto representa el parametro 'b' (variable dependiente) convertido a numpy  </font>
+
+# In[3]:
+
+
+def MinCua2(a,b,c):
+    
+    #Se convierten en arrays de numpy para poder usar los metodos de dicha libreria
+    xt = np.array(a)
+    zt = np.array(b)
+    Y = np.array(c)
+
+    #se añade columna de unos(1) para representar el termino independiente
+    C1 =  np.ones(len(xt))
+    
+    """" 
+    Se transpone X debido a que la matriz de parametros beta resultante, tiene la forma de 1 fila y 2 coumnas
+    por tanto no esta en la forma vectorial sino en la vectorial transpuesta 
+    """
+    
+    X = np.array([C1, xt, zt]).T
+
+    # @ = Multiplicacion Matricial
+    # X.T = np.transpose(x) = X transpuesta
+    B = np.linalg.inv(X.T @ X) @ X.T @ Y
+
+    #Esta operacion nos da como resultado una lista con 2 parametros, el primero representa la variable independiente
+    # y el segundo la pendiente optima para minimizar el error cuadratico, esta formula se demostro en algebra lineal
+    #b = B[0]
+    #m_x = B[1]
+    #m_z = B[2]
+    return [B[0],B[1], B[2],xt, X, Y]
+
