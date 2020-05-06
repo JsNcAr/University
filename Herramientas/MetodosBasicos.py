@@ -81,8 +81,8 @@ def ajuCuaEcu(x, y):
 def puntosCriticos(r1, r2, lis):
     criticos = []
     for var in range (r1, r2):
-        if  abs( float(lis.iloc[var-1]) ) < abs( float(lis.iloc[var]) ) and abs( (float(lis.iloc[var+1]) ) < 
-        abs (float(lis.iloc[var]) ) ):
+        if  float(lis.iloc[var-1])  <  float(lis.iloc[var])  and  (float(lis.iloc[var+1])  < 
+        float(lis.iloc[var]) ) :
             criticos.append(var)
 
     return(criticos)
