@@ -32,13 +32,15 @@ def MinCua(y, xn):
     #Crea una columna de unos para representar el termino independiente y corrimiento del ajuste
     X_0 = np.ones(len(xn[0]))
 
-    #Crea la matriz vacia de parametros X y le asigna sus valores correspondientes
-    X = np.empty( shape=( len(X_0),len(xn[0]) ) )
-    X[0] = X_0
-    X[1:] = xn
+    #Crea la matriz vacia de parametros XT y le asigna sus valores correspondientes
+    #Esta representaria la transpuesta de la matriz X por motivos de optimizacion
+    XT = np.empty( shape=( len(xn)+1, len(X_0) ) )
 
+    XT[0] = X_0
+    XT[1:] = xn
+    
     #Aplica formula para encontrar el vector de parametros que minimiza error cuadratico
-    B = np.linalg.inv(X.T @ X) @ X.T @ Y
+    B = np.linalg.inv(XT @ XT.T) @ XT @ Y
     
     return B
 
