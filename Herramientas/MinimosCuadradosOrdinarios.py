@@ -54,29 +54,36 @@ def MinCua(a,b):
 # In[3]:
 
 
-def MinCua2(a,b, dim = 2, c=[0], d=[0]):
+def MinCua2(y,x1, dim = 2, x2=[0], x3=[0], x4=[0], x5=[0]):
     
     #Se convierten en arrays de numpy para poder usar los metodos de dicha libreria
-    Y = np.array(a)
-    xt = np.array(b)
-    zt = np.array(c)
-    gt = np.array(d)
+    Y = np.array(y)
+    x1t = np.array(x1)
+    x2t = np.array(x2)
+    x3t = np.array(x3)
+    x4t = np.array(x4)
+    x5t = np.array(x5)
 
     #se añade columna de unos(1) para representar el termino independiente
-    C1 =  np.ones(len(xt))
+    C1 =  np.ones(len(x1t))
     
     """" 
     Se transpone X debido a que la matriz de parametros beta resultante, tiene la forma de 1 fila y 2 coumnas
     por tanto no esta en la forma vectorial sino en la vectorial transpuesta 
     """
     if dim ==1:
-        X = np.array([xt]).T
+        X = np.array([x1t]).T
     elif dim == 2:
-        X = np.array([C1, xt]).T
+        X = np.array([C1, x1t]).T
     elif dim == 3:
-        X = np.array([C1, xt,zt]).T
+        X = np.array([C1, x1t,x2t]).T
+    elif dim == 4:
+        X = np.array([C1, x1t, x2t, x3t]).T
+    elif dim == 5:
+        X = np.array([C1, x1t, x2t, x3t, x4t, x5t]).T
     else:
-        X = np.array([C1, xt, zt, gt]).T
+        print("Error: Este metodo solo funciona hasta orden 5")
+        return ("Este metodo solo funciona hasta orden 5")
 
     # @ = Multiplicacion Matricial
     # X.T = np.transpose(x) = X transpuesta
@@ -85,7 +92,7 @@ def MinCua2(a,b, dim = 2, c=[0], d=[0]):
     #Esta operacion nos da como resultado una lista con 2 parametros, el primero representa la variable independiente
     # y el segundo la pendiente optima para minimizar el error cuadratico, esta formula se demostro en algebra lineal
     #b = B[0]
-    #m_x = B[1]
-    #m_z = B[2]
+    #m_x1 = B[1]
+    #m_x2 = B[2] ...
     return [B]
 
